@@ -1,5 +1,4 @@
 pandas==2.1.4
 pip==23.3.2
 streamlit
-pygame==2.5.2
 requests
