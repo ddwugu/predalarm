@@ -3,6 +3,9 @@ import requests
 import pandas as pd
 import pygame
 
+# Inisialisasi Pygame Mixer
+pygame.mixer.init()
+
 # Web Title
 st.title('Pertamina Field Jambi')
 st.subheader('Prediksi Lokasi Kebocoran Line BJG-TPN')
@@ -46,10 +49,8 @@ while True:
         # Check conditions for buzzer
         if Titik_2_PSI < 90 or Titik_1_PSI < 150:
             # Trigger buzzer sound
-            pygame.mixer.Sound('s.mp3').play()  # Adjust the file name as needed
+            pygame.mixer.Sound('s.mp3').play()  # Sesuaikan nama file sesuai kebutuhan
         
     else:
         placeholder1.error("Failed to fetch data. Please try again later.")
         placeholder2.error("Failed to fetch data. Please try again later.")
-
-
