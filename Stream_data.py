@@ -1,10 +1,14 @@
 import streamlit as st
 import requests
 import pandas as pd
+import pygame
+
+# Initialize pygame mixer
+
 
 # Web Title
 st.title('Pertamina Field Jambi')
-st.subheader('Prediksi Lokasi Kebocoran Line BJG-TPN')
+st.subheader('Line BJG-TPN')
 
 # User Inputs
 READ_API_KEY = 'SPYMD6ONS3YT6HKN'
@@ -45,8 +49,10 @@ while True:
         # Check conditions for buzzer
         if Titik_2_PSI < 90 or Titik_1_PSI < 150:
             # Trigger buzzer sound
-            audio_html = f'<audio autoplay><source src="s.mp3" type="audio/ogg"></audio>'
-            st.markdown(audio_html, unsafe_allow_html=True)
+            pygame.mixer.init()
+            pygame.mixer.Sound('s.mp3').play()  # Adjust the file name as needed
+        
     else:
         placeholder1.error("Failed to fetch data. Please try again later.")
         placeholder2.error("Failed to fetch data. Please try again later.")
+
