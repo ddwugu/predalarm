@@ -1,14 +1,10 @@
 import streamlit as st
 import requests
 import pandas as pd
-import pygame
-
-# Initialize pygame mixer
-pygame.mixer.init()
 
 # Web Title
 st.title('Pertamina Field Jambi')
-st.subheader('Line BJG-TPN')
+st.subheader('Prediksi Lokasi Kebocoran Line BJG-TPN')
 
 # User Inputs
 READ_API_KEY = 'SPYMD6ONS3YT6HKN'
@@ -43,15 +39,15 @@ placeholder2 = st.empty()
 while True:
     Titik_1_PSI, Titik_2_PSI = fetch_data()
     if Titik_1_PSI is not None and Titik_2_PSI is not None:
-        placeholder1.write(f"Tekanan MGS BJG(PSI) (Titik 1 PSI): {Titik_1_PSI}")
-        placeholder2.write(f"Tekanan BOOSTER BJG-TPN (PSI) (Titik 2 PSI): {Titik_2_PSI}")
+        placeholder1.write(f"Pressure at Point 1 (Titik 1 PSI): {Titik_1_PSI}")
+        placeholder2.write(f"Pressure at Point 2 (Titik 2 PSI): {Titik_2_PSI}")
         
         # Check conditions for buzzer
         if Titik_2_PSI < 90 or Titik_1_PSI < 150:
             # Trigger buzzer sound
-            pygame.mixer.Sound('s.mp3').play()  # Adjust the file name as needed
-        
+            audio_file = open('s.mp3', 'rb')
+            audio_bytes = audio_file.read()
+            st.audio(audio_bytes, format='audio/mp3', start_time=0)
     else:
         placeholder1.error("Failed to fetch data. Please try again later.")
         placeholder2.error("Failed to fetch data. Please try again later.")
-
