@@ -47,7 +47,7 @@ while True:
             # Trigger buzzer sound
             audio_file = open('s.mp3', 'rb')
             audio_bytes = audio_file.read()
-            st.audio(audio_bytes, format='audio/mp3', start_time=0)
+            st.audio(audio_bytes, format='audio/mp3', start_time=0, autoplay=True)
     else:
         placeholder1.error("Failed to fetch data. Please try again later.")
         placeholder2.error("Failed to fetch data. Please try again later.")
