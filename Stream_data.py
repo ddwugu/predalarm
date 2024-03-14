@@ -3,7 +3,6 @@ import requests
 import pandas as pd
 from pygame import mixer
 
-mixer.init()
 
 # Web Title
 st.title('Pertamina Field Jambi')
@@ -48,6 +47,7 @@ while True:
         # Check conditions for buzzer
         if Titik_2_PSI < 90 or Titik_1_PSI < 150:
             # Trigger buzzer sound
+            mixer.init()
             mixer.music.load("s.mp3")  # Adjust the file name as needed
             mixer.music.play()
         
