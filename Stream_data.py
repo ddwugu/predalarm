@@ -4,4 +4,4 @@ import pandas as pd
 import pygame
 
 # Initialize pygame mixer
-
+pygame.mixer.init()
