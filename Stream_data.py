@@ -45,7 +45,7 @@ while True:
         # Check conditions for buzzer
         if Titik_2_PSI < 90 or Titik_1_PSI < 150:
             # Trigger buzzer sound
-            audio_html = f'<audio autoplay><source src="s.mp3" type="audio/mpeg"></audio>'
+            audio_html = f'<audio autoplay><source src="s.mp3" type="audio/mp3"></audio>'
             st.markdown(audio_html, unsafe_allow_html=True)
     else:
         placeholder1.error("Failed to fetch data. Please try again later.")
