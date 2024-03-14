@@ -43,8 +43,8 @@ placeholder2 = st.empty()
 while True:
     Titik_1_PSI, Titik_2_PSI = fetch_data()
     if Titik_1_PSI is not None and Titik_2_PSI is not None:
-        placeholder1.write(f"Pressure at Point 1 (Titik 1 PSI): {Titik_1_PSI}")
-        placeholder2.write(f"Pressure at Point 2 (Titik 2 PSI): {Titik_2_PSI}")
+        placeholder1.write(f"Tekanan MGS BJG(PSI) (Titik 1 PSI): {Titik_1_PSI}")
+        placeholder2.write(f"Tekanan BOOSTER BJG-TPN (PSI) (Titik 2 PSI): {Titik_2_PSI}")
         
         # Check conditions for buzzer
         if Titik_2_PSI < 90 or Titik_1_PSI < 150:
