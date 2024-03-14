@@ -8,7 +8,7 @@ pygame.mixer.init()
 
 # Web Title
 st.title('Pertamina Field Jambi')
-st.subheader('Prediksi Lokasi Kebocoran Line BJG-TPN')
+st.subheader('Line BJG-TPN')
 
 # User Inputs
 READ_API_KEY = 'SPYMD6ONS3YT6HKN'
