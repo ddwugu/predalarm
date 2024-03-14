@@ -2,9 +2,9 @@ import streamlit as st
 import requests
 import pandas as pd
 import pygame
+from pygame import mixer
 
-
-
+pygame.mixer.init()
 
 # Web Title
 st.title('Pertamina Field Jambi')
@@ -41,7 +41,6 @@ placeholder2 = st.empty()
 
 # Loop for real-time updates
 while True:
-    pygame.mixer.init()
     Titik_1_PSI, Titik_2_PSI = fetch_data()
     if Titik_1_PSI is not None and Titik_2_PSI is not None:
         placeholder1.write(f"Pressure at Point 1 (Titik 1 PSI): {Titik_1_PSI}")
