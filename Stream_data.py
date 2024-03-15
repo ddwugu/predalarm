@@ -48,7 +48,7 @@ while True:
         if Titik_2_PSI < 90 or Titik_1_PSI < 150:
             # Trigger buzzer sound
             mixer.init()
-            mixer.music.load("music.mp3")  # Adjust the file name as needed
+            mixer.music.load("music_audio.wav")  # Adjust the file name as needed
             mixer.music.play()
         
     else:
