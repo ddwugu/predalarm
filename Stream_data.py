@@ -1,6 +1,17 @@
 import streamlit as st
 import requests
 import pandas as pd
+import threading
+import time
+
+# Function to play audio
+def play_audio():
+    while True:
+        if Titik_2_PSI < 90 or Titik_1_PSI < 150:
+            audio_file = open('s.mp3', 'rb')
+            audio_bytes = audio_file.read()
+            st.audio(audio_bytes, format='audio/mp3', start_time=0)
+            break
 
 # Web Title
 st.title('Pertamina Field Jambi')
@@ -44,10 +55,11 @@ while True:
         
         # Check conditions for buzzer
         if Titik_2_PSI < 90 or Titik_1_PSI < 150:
-            # Trigger buzzer sound
-            audio_file = open('s.mp3', 'rb')
-            audio_bytes = audio_file.read()
-            st.audio(audio_bytes, format='audio/mp3', start_time=0)
+            # Start a new thread to play audio
+            threading.Thread(target=play_audio).start()
     else:
         placeholder1.error("Failed to fetch data. Please try again later.")
         placeholder2.error("Failed to fetch data. Please try again later.")
+
+    # Sleep for a while to prevent continuous requests
+
