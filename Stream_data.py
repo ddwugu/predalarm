@@ -49,7 +49,7 @@ while True:
         # Check conditions for buzzer
         if Titik_2_PSI < 90 or Titik_1_PSI < 150:
             # Trigger buzzer sound
-            pygame.mixer.Sound('music_audio.wav').play()  # Adjust the file name as needed
+            pygame.mixer.Sound('aa.wav').play()  # Adjust the file name as needed
         
     else:
         placeholder1.error("Failed to fetch data. Please try again later.")
