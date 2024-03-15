@@ -5,7 +5,7 @@ import pygame
 pygame.mixer.init()
 
 # Load file audio
-audio_file_path = "music.mp3"
+audio_file_path = "Andmesh.mp3"
 
 # Memainkan file audio
 pygame.mixer.music.load(audio_file_path)
