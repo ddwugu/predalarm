@@ -2,7 +2,7 @@ import streamlit as st
 import pygame
 
 # Inisialisasi Pygame
-pygame.init()
+pygame.mixer.init()
 
 # Load file audio
 audio_file_path = "music.mp3"
