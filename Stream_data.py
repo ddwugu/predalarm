@@ -4,7 +4,7 @@ import pandas as pd
 import pygame
 
 # Initialize pygame mixer
-
+pygame.mixer.init()
 
 # Web Title
 st.title('Pertamina Field Jambi')
